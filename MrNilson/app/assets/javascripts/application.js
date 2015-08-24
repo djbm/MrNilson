@@ -12,8 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
-//= require turbolinks
-//= require_tree .
+//= require bootstrap-sprockets
 
-$(function(){ $(document).foundation(); });
+  WebFontConfig = {
+    google: { families: [ 'Architects+Daughter::latin', 'Fredericka+the+Great::latin', 'Cabin+Sketch::latin', 'Yellowtail::latin', 'Lato::latin', 'Poiret+One::latin', 'Lobster::latin', 'Kaushan+Script::latin', 'Lobster+Two::latin', 'Pinyon+Script::latin', 'Playball::latin', 'Tangerine::latin', 'Great+Vibes::latin', 'Special+Elite::latin', 'Rochester::latin', 'Allerta+Stencil::latin', 'Adamina::latin', 'Montez::latin', 'Cinzel+Decorative::latin', 'Lustria::latin', 'Seaweed+Script::latin', 'Vast+Shadow::latin', 'UnifrakturMaguntia::latin', 'Monoton::latin', 'Rye::latin', 'Monofett::latin', 'Dawning+of+a+New+Day::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();

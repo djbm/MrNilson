@@ -1,0 +1,2 @@
+class AccesoController < ApplicationController
+end

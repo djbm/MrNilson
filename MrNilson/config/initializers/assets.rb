@@ -6,3 +6,9 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+#config.assets.paths << Rails.root.join("images")
+Rails.application.config.assets.precompile += %w( vendor/modernizr.js )
+#Rails.application.config.assets.precompile += %w( foundation_and_overrides.css )
+#Rails.application.config.assets.precompile += %w( foundation.min.css )
+Rails.application.config.assets.precompile += %w( main.css )
+#Rails.application.config.assets.precompile += %w( foundation/foundation.min.js )
