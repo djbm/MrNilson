@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter|Fredericka+the+Great|Cabin+Sketch|Yellowtail|Lato|Poiret+One|Lobster|Kaushan+Script|Lobster+Two|Pinyon+Script|Playball|Tangerine|Great+Vibes|Special+Elite|Rochester|Allerta+Stencil|Adamina|Montez|Cinzel+Decorative|Lustria|Seaweed+Script|Vast+Shadow|UnifrakturMaguntia|Monoton|Rye|Monofett|Dawning+of+a+New+Day' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="<%= image_path("others/d_javier.JPG")%>">
+    <title>Mr Nilson</title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+  </head>
+
+  <body>
+
+  <!-- Static navbar -->
+    <div class="container">
+      <!--<nav class="navbar navbar-default navbar-static-top col-md-12">-->
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid menu_bar">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand tittle_homepage" href="#">Mister Nilson</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="menu_hover"><a href="#">Home</a></li>
+              <% if @current_user.present? && @current_user.role == "admin" %>
+              	<li class="menu_hover"><a href="#">Users</a></li> 
+  			     <% end %>
+
+              <li class="menu_hover"><a href="#">My sings</a></li>
+                     
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="menu_hover"><a href="#">Contact</a></li>
+              <li class="menu_hover"><a href="#">About MrNilson <span class="sr-only">(current)</span></a></li>
+              <!--<li class="dropdown">-->
+              <!--ESTABLECER AQUI LA IMAGEN EN UNA VARIABLE-->
+              <%
+              
+               if (@current_user.present? && @current_user.image_info.present? && @current_user.image_info["secure_url"].present?)
+                 url = @current_user.image_info["secure_url"].to_s 
+               elsif (@current_user.meta.present? && @current_user.meta["genre"].present? && @current_user.meta["genre"] == "female") 
+                  url = image_url("others/default_woman.png").to_s 
+               else
+                  url = image_url("others/default_man.png").to_s 
+               end
+
+
+              %>
+
+              <li class="link_with_submenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <%= cl_image_tag( url, :width => 30, :height => 30, 
+             :crop => :thumb, :gravity => :face, :radius => :max, :class => "gravatar_image img-circle") %>
+                <!--<img src="<%#= image_path("others/d_javier.JPG")%>" class="img-circle gravatar_image" alt="Circular Image">--><span class="caret white_font"></span></a>
+                <ul class="dropdown-menu white-background">
+                  <li class="submenus"><a href="#">Profile</a></li>
+                  <li class="submenus"><a href="<%= logout_path() %>">Logout</a></li>
+                 </ul>
+             	</li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
+  	  <div class="content-body">
+      		<%= yield %>
+      </div>
+    </div>
+  </body>
+  <footer>
+  	<div class=" vcenter">
+  		&copy; 2015 - All rights reserved - MrNilson.
+  	</div>
+  </footer>
+</html>

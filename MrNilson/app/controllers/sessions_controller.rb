@@ -1,28 +1,41 @@
 class SessionsController < ApplicationController
 
+	layout "menu" 
+
 	def new 
 
 	end
 
 	def create
-
-		user = User.authenticate(params[:email], params[:password])
+		raise 'creando session...'
+		if env.present? && env['omniauth.auth'].present?
+			user = User.omniauth(env['omniauth.auth'])
+		else
+			user = User.authenticate(params[:user][:email], params[:user][:password])
+		end
+		
 
 		if user.nil?
-			#show message
-			#render "new"
+			#render ("users/user_not_exists.html.erb")
+			deny_access
 		else
 			sign_in user
+			#raise @current_user.to_yaml
+			flash[:success] = "Welcome to the Sample App!"
 			redirect_to user
 		end
 
+		/#respond_to do |format|
+		  format.html { redirect_to home, notice: 'Lesson was successfully created.' }
+		  #format.json { render json: @post, status: :created, location: @post }
 
-
-
+		end#/
 	end
 
 	def destroy
-		sign_out user
+
+		#user = @current_user
+		sign_out
 		redirect_to sign_in_path
 
 	end
@@ -31,3 +44,6 @@ class SessionsController < ApplicationController
 
 
 end
+
+
+#https://res.cloudinary.com/mrnilsond

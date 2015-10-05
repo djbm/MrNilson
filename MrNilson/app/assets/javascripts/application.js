@@ -11,8 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require ./form-master/jquery.form
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require bootstrap-slider
+//= require cloudinary
 
   WebFontConfig = {
     google: { families: [ 'Architects+Daughter::latin', 'Fredericka+the+Great::latin', 'Cabin+Sketch::latin', 'Yellowtail::latin', 'Lato::latin', 'Poiret+One::latin', 'Lobster::latin', 'Kaushan+Script::latin', 'Lobster+Two::latin', 'Pinyon+Script::latin', 'Playball::latin', 'Tangerine::latin', 'Great+Vibes::latin', 'Special+Elite::latin', 'Rochester::latin', 'Allerta+Stencil::latin', 'Adamina::latin', 'Montez::latin', 'Cinzel+Decorative::latin', 'Lustria::latin', 'Seaweed+Script::latin', 'Vast+Shadow::latin', 'UnifrakturMaguntia::latin', 'Monoton::latin', 'Rye::latin', 'Monofett::latin', 'Dawning+of+a+New+Day::latin' ] }
@@ -26,3 +29,12 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
   })();
+
+//adding faceboook buttons
+/*(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));*/

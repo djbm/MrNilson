@@ -13,7 +13,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'coffee-script', '~> 2.4.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+#gem 'therubyracer',  platforms: :ruby
 
 gem 'jquery-minicolors-rails'
 
@@ -55,8 +55,32 @@ gem 'carmen-rails'
 #generate pdf
 gem 'pdfkit'
 
-#slider
-gem 'flexslider'
-
 #bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-slider-rails'
+
+gem "font-awesome-rails"
+
+#upload images
+gem 'cloudinary'
+
+#uploading files
+gem "jquery-fileupload-rails"
+#gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+
+#login with facebook && twitter
+#gem 'omniauth'
+#gem 'omniauth-facebook'
+#gem 'omniauth-twitter'
+
+gem 'json'
+gem 'ruby_parser'
+gem 'gettext'
+
+
+#to view errors
+group :development do
+  gem "binding_of_caller"
+  gem "better_errors"
+end

@@ -125,7 +125,17 @@ p.title {
 	font-family: 'Fredericka the Great', cursive;
 	text-align: center;
     font-size: 92px;
-    color: #136D79;
+    color: #FFFFFF !important;
+    transform: scale(1,1);
+    transition-duration: 0.5s;
+}
+
+.tittle_homepage:hover{
+	color: #FFFFFF !important;
+	-ms-transform: scale(1.2,1.2); /* IE 9 */
+    -webkit-transform: scale(1.2,1.2); /* Safari */
+    transform: scale(1.2,1.2);
+	transition-duration: 0.5s;
 }
 
 // box login homepage
@@ -138,3 +148,166 @@ p.title {
 	margin-top: 60px;
 }
 
+//hover bootstrap-social
+a.b-social:hover{
+	color: #FFFFFF;
+}
+
+label.required > abbr{
+	color: #FF0000;
+}
+
+.avatar_image{
+	height: 100px;
+	width: 100px;
+	
+}
+
+.gravatar_image{
+	height: 30px;
+	width: 30px;	
+}
+
+
+//menus
+.navbar{
+	margin-top:20px !important;
+	//position: fixed !important;
+}
+
+.dropdown-menu{
+    //padding: 0 !important;
+    border: none !important;
+}
+
+li.menu_hover > a{
+    //border-radius: 6px;
+    //transition-property: background, border-radius;
+    color: #FFFFFF !important;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;	
+    -ms-transform: scale(1,1); /* IE 9 */
+    -webkit-transform: scale(1,1); /* Safari */
+    transform: scale(1,1);
+}
+
+li.menu_hover:hover, li.menu_hover>a:hover{
+	//background: #337ab7;
+	color: #FFFFFF !important;
+	transition-property: all;
+	transition-duration: 0.2s;
+	-ms-transform: scale(1.05,1.05); /* IE 9 */
+    -webkit-transform: scale(1.05,1.05); /* Safari */
+    transform: scale(1.05,1.05);
+}
+
+.blue_background, .blue_background > a:hover{
+	background: #337ab7 !important;
+}
+
+.white-background, .white-background > a:hover{
+	background: #FFFFFF !important;
+}
+
+.white_font{
+	color: #FFFFFF;
+}
+
+li.submenus, li.submenus > a{
+	transition-property: all;
+	transition-duration: 0.5s;
+	background: #FFFFFF;
+	color: #337ab7 !important;
+}
+
+li.submenus > a:hover, li.submenus:hover{
+	color: #FFFFFF !important;
+	transition-property: all;
+	transition-duration: 1s;
+	background: #337ab7 !important;
+}
+
+.link_with_submenu > a:active {
+	transition: none !important;
+	text-decoration:none !important;
+	outline:0 !important;
+    //background-color: yellow !important;
+}
+
+li.open > a:focus, li.link_with_submenu > a:focus{
+	background-color: #337ab7 !important;
+	background: #337ab7 !important;
+	border-color: #337ab7 !important;
+}
+
+//menus
+
+//profile photo
+
+.card-container {
+  cursor: pointer;
+  height: 100px;
+  perspective: 100;
+  position: relative;
+  width: 100px;
+}
+.card {
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  width: 100%;
+}
+.card:hover {
+  transform: rotateY(180deg);
+}
+.card .side {
+  backface-visibility: hidden;
+  border-radius: 50%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+}
+.card .back {
+  background: #eaeaed;
+  color: #0087cc;
+  line-height: 150px;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+//profile photo
+
+.menu_bar{
+	border-radius: 5px;
+	border: 1px solid #337ab7;
+	background: #337ab7;
+	color: #FFFFFF;
+}
+
+.content-body{
+	padding-top: 25px;
+}
+
+footer{
+	text-align: center;
+	background-color: #337ab7;
+	color: #FFFFFF;
+	height: 50px;
+	display: table !important;
+	width: 100%;
+	position: static;
+}
+
+.vcenter {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+//bar progress cloudinary image
+.bar {
+    height: 18px;
+    background: green;
+}
